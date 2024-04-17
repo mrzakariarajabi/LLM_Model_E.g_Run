@@ -3,7 +3,7 @@ from threading import Thread
 from typing import Iterator
 
 import gradio as gr
-#import spaces
+import spaces
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, TextIteratorStreamer
 
@@ -22,7 +22,7 @@ if torch.cuda.is_available():
     tokenizer = AutoTokenizer.from_pretrained(model_id)
 
 
-#@spaces.GPU
+@spaces.GPU
 def generate(
     message: str,
     chat_history: list[tuple[str, str]],
